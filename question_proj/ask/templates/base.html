@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap-4.1.0/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/my-styles.css'%}">
+    {% block page_header_settings %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #fafafb;">
+        <div class="container">
+            <a class="navbar-brand" href="#">AskMe</a>
+
+            <form class="ml-auto">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Поиск вопроса..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" alt="Поиск">
+                            <img src="{% static 'media/images/ic_search.svg' %}" alt="Поиск">
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <a class="btn btn-success ml-1 mr-auto" href="#" role="button">Спросить</a>
+
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    {% block page_main_content %}
+    {% endblock %}
+
+
+    <script src="{% static 'base/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'base/js/popper.min.js' %}"></script>
+    {% block page_scripts_settings %}
+    {% endblock %}
+</body>
+</html>
